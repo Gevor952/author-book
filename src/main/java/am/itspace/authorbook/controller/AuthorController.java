@@ -35,4 +35,10 @@ public class AuthorController{
         return "redirect:/author";
     }
 
+    @GetMapping(value = "/author/delete")
+    public String authorDeletePage(@RequestParam("id") int id){
+        authorRepository.deleteById(id);
+        return "redirect:/author";
+    }
+
 }

@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -39,6 +40,12 @@ public class BookController {
     @PostMapping(value = "/book/add")
     public String addBook(@ModelAttribute("book") Book book) {
         bookRepository.save(book);
+        return "redirect:/book";
+    }
+
+    @GetMapping(value = "/book/delete")
+    public String authorDeletePage(@RequestParam("id") int id){
+        bookRepository.deleteById(id);
         return "redirect:/book";
     }
 

@@ -14,12 +14,14 @@ Book<br>
         <th>id</th>
         <th>title</th>
         <th>author</th>
+        <th>delete</th>
     </tr>
 
     <tr th:each="book : ${books}">
         <td th:text="${book.getId()}"></td>
         <td th:text="${book.getTitle()}"></td>
         <td th:text="${book.getAuthor().getName()}"></td>
+        <td><a th:href="@{/book/delete(id=${book.getId()})}">delete</a></td>
     </tr>
 
 </table>
