@@ -21,7 +21,7 @@ Book<br>
         <td th:text="${book.getId()}"></td>
         <td th:text="${book.getTitle()}"></td>
         <td th:text="${book.getAuthor().getName()}"></td>
-        <td><a th:href="@{/book/delete(id=${book.getId()})}">delete</a></td>
+        <td><a th:href="@{/book/delete(id=${book.getId()})}">delete</a> /  <a th:href="@{/book/edit(id=${book.getId()})}">Edit</a></td>
     </tr>
 
 </table>

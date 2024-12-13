@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"  xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+</head>
+<body>
+add_author<br>
+<form action="/author/edit" method="post">
+    <input type="hidden" name="id" th:value="${author.getId()}">
+    <input type="text" name="name" placeholder="name" th:value="${author.getName()}"><br>
+    <input type="text" name="surname" placeholder="surname" th:value="${author.getSurname()}"><br>
+    <input type="date" name="dob" th:value="${#dates.format(author.getDob(), 'yyy-MM-dd')}"><br>
+    <input type="email" name="email" placeholder="email" th:value="${author.getEmail()}"><br>
+    Gender: <select name="gender">
+    <option value="MALE" th:selected="${author.gender.name() == 'MALE'}">male</option>
+    <option value="FEMALE" th:selected="${author.gender.name() == 'MALE'}">female</option>
+</select><br>
+    <input type="submit">
+</form>
+</body>
+</html>
